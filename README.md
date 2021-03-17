@@ -2,7 +2,7 @@
 
 ### Обзор
 
-страница на gh-pages: https://prohorova-os.github.io/russian-travel/
+страница на gh-pages: https://prohorova-os.github.io/mesto/index.html
 
 В проекте используется адаптивная верстка, БЭМ, flex, grid. Проект адаптирован под размеры экранов: 1280px, 960px, 640px, 320px - под размер карточек. Сделан попап, редактирование информации, использован JS и работа с DOM.
 
