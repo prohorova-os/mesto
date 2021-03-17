@@ -8,74 +8,92 @@
 </head>
 <body class="page">
     <div class="container">
+        <!--popup-->
+        <div class="popup">
+            <div class="popup__overlay"></div>
+            <div class="popup__content">
+                <img class="popup__close-btn cursor" src="./image/popup-close-btn.png" alt="Закрытие">
+                <span class="popup__title">Редактировать профиль</span>
+                <form>
+                    <div class="popup__edit-title" contenteditable="true"></div>
+                    <div class="popup__line"></div>
+                    <div class="popup__edit-subtitle" contenteditable="true"></div>
+                    <div class="popup__line"></div>
+                    <input type="submit" value="Сохранить" class="popup__save-btn cursor">
+                </form>
+            </div>
+        </div>
+
         <!--блок header-->
         <header class="header">
             <img class="header__logo" src="./image/header-logo.png" alt="Место Россия">
             <div class="header__line"></div>
         </header>
+
+        <main>
+            <!--блок profile-->
+            <section class="profile">
+                <img class="profile__avatar" src="./image/profile-avatar.jpg" alt="Аватар">
+                <div class="profile__info">
+                    <div class="profile__title-edit-btn">
+                        <h1 class="profile__title">Жак-Ив Кусто</h1>
+                        <div class="profile__edit-btn cursor" id="open_popup_btn"></div>
+                    </div>
+                    <h2 class="profile__subtitle">Исследователь океана</h2>
+                </div>
+                <div class="profile__add-btn cursor"></div>
+            </section>
+            <!--блок elements-->
+            <section class="elements">
+                <div class="element">
+                    <img class="element__foto" src="./image/element1-kirill-pershin-1088404-unsplash.jpg" alt="Карачаевск">
+                    <div class="element__title-like">
+                        <p class="element__title block">Карачаевск</p>
+                        <div class="element__like cursor"></div>
+                    </div>
+                </div>
+                <div class="element">
+                    <img class="element__foto" src="./image/element2-kirill-pershin-1404681-unsplash.jpg" alt="Гора Эльбрус">
+                    <div class="element__title-like">
+                        <p class="element__title block">Гора Эльбрус</p>
+                        <img class="element__like cursor" src="./image/element-like.png" alt="Лайк">
+                    </div>
+                </div>
+                <div class="element">
+                    <img class="element__foto" src="./image/element3-kirill-pershin-1556355-unsplash.jpg" alt="Домбай">
+                    <div class="element__title-like">
+                        <p class="element__title block">Домбай</p>
+                        <img class="element__like cursor" src="./image/element-like.png" alt="Лайк">
+                    </div>
+                </div>
+                <div class="element">
+                    <img class="element__foto" src="./image/element1-kirill-pershin-1088404-unsplash.jpg" alt="Карачаевск">
+                    <div class="element__title-like">
+                        <p class="element__title block">Карачаево-Черкессия</p>
+                        <img class="element__like cursor" src="./image/element-like.png" alt="Лайк">
+                    </div>
+                </div>
+                <div class="element">
+                    <img class="element__foto" src="./image/element2-kirill-pershin-1404681-unsplash.jpg" alt="Гора Эльбрус">
+                    <div class="element__title-like">
+                        <p class="element__title block">Гора Эльбрус</p>
+                        <img class="element__like cursor" src="./image/element-like.png" alt="Лайк">
+                    </div>
+                </div>
+                <div class="element">
+                    <img class="element__foto" src="./image/element3-kirill-pershin-1556355-unsplash.jpg" alt="Домбай">
+                    <div class="element__title-like">
+                        <p class="element__title block">Домбай</p>
+                        <img class="element__like cursor" src="./image/element-like.png" alt="Лайк">
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!--блок footer-->
+        <footer class="footer">
+            <span class="footer__copyright">&copy;2020 Mesto Russia</span>
+        </footer>
     </div>
-    <main>
-        <!--блок profile-->
-        <section class="profile">
-            <img class="profile__avatar" src="./image/profile-avatar.jpg" alt="Аватар">
-            <div class="profile__info">
-                <div class="profile__title-edit-btn">
-                    <h1 class="profile__title">Жак-Ив Кусто</h1>
-                    <div class="profile__edit-btn cursor" id="open_popup_btn"></div>
-                </div>
-                <h2 class="profile__subtitle">Исследователь океана</h2>
-            </div>
-            <div class="profile__add-btn cursor"></div>
-        </section>
-        <!--блок elements-->
-        <section class="elements">
-            <div class="element">
-                <img class="element__foto" src="./image/element1-kirill-pershin-1088404-unsplash.jpg" alt="Карачаевск">
-                <div class="element__title-like">
-                    <p class="element__title block">Карачаевск</p>
-                    <div class="element__like cursor"></div>
-                </div>
-            </div>
-            <div class="element">
-                <img class="element__foto" src="./image/element2-kirill-pershin-1404681-unsplash.jpg" alt="Гора Эльбрус">
-                <div class="element__title-like">
-                    <p class="element__title block">Гора Эльбрус</p>
-                    <img class="element__like cursor" src="./image/element-like.png" alt="Лайк">
-                </div>
-            </div>
-            <div class="element">
-                <img class="element__foto" src="./image/element3-kirill-pershin-1556355-unsplash.jpg" alt="Домбай">
-                <div class="element__title-like">
-                    <p class="element__title block">Домбай</p>
-                    <img class="element__like cursor" src="./image/element-like.png" alt="Лайк">
-                </div>
-            </div>
-            <div class="element">
-                <img class="element__foto" src="./image/element1-kirill-pershin-1088404-unsplash.jpg" alt="Карачаевск">
-                <div class="element__title-like">
-                    <p class="element__title block">Карачаево-Черкессия</p>
-                    <img class="element__like cursor" src="./image/element-like.png" alt="Лайк">
-                </div>
-            </div>
-            <div class="element">
-                <img class="element__foto" src="./image/element2-kirill-pershin-1404681-unsplash.jpg" alt="Гора Эльбрус">
-                <div class="element__title-like">
-                    <p class="element__title block">Гора Эльбрус</p>
-                    <img class="element__like cursor" src="./image/element-like.png" alt="Лайк">
-                </div>
-            </div>
-            <div class="element">
-                <img class="element__foto" src="./image/element3-kirill-pershin-1556355-unsplash.jpg" alt="Домбай">
-                <div class="element__title-like">
-                    <p class="element__title block">Домбай</p>
-                    <img class="element__like cursor" src="./image/element-like.png" alt="Лайк">
-                </div>
-            </div>
-        </section>
-    </main>
-    <!--блок footer-->
-    <footer class="footer">
-        <span class="footer__copyright">&copy;2020 Mesto Russia</span>
-    </footer>
+    <script src="./scripts/index.js"></script>
 </body>
 </html>

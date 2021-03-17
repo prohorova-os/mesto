@@ -1,0 +1,25 @@
+.popup__close-btn {
+    position: absolute;
+    object-fit: cover;
+    box-sizing: border-box;
+    width: 56.56px;
+    height: 56.56px;
+    margin: 0;
+    padding: 0;
+    top: -50px;
+    left: 420px;
+}
+
+.popup__close-btn:hover {
+    opacity: 0.6;
+}
+
+@media screen and (max-width: 639px) {
+    .popup__close-btn {
+        max-width: 282px;
+        width: 36.76px;
+        height: 36.76px;
+        top: -50px;
+        left: 245.24px;
+    }
+}
