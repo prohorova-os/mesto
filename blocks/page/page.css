@@ -1,0 +1,12 @@
+.page {
+    background: #000000;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: 'Inter', Arial, sans-serif;
+    color: #FFFFFF;
+    text-rendering: optimizeLegibility;
+}
