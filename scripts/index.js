@@ -16,8 +16,8 @@ function formSubmitHandler (evt) {
                                                     // Так мы можем определить свою логику отправки.
                                                     // О том, как это делать, расскажем позже.
     // Получите значение полей jobInput и nameInput из свойства value
-    inputName = document.querySelector('.popup__edit-title');
-    inputJob = document.querySelector('.popup__edit-subtitle');
+    let inputName = document.querySelector('.popup__edit-title');
+    let inputJob = document.querySelector('.popup__edit-subtitle');
     
     // Выберите элементы, куда должны быть вставлены значения полей
     // Вставьте новые значения с помощью textContent    
@@ -32,7 +32,7 @@ function OpenPopup(event) {
     popupSubtitle.textContent = editSubtitle.textContent;
 
     // Находим форму в DOM
-    let formElement = document.querySelector('.popup');// Воспользуйтесь методом querySelector()
+    let formElement = document.getElementById('popup_form');// Воспользуйтесь методом querySelector()
 
     // Находим поля формы в DOM
     let nameInput = formElement.querySelector('.popup__edit-title');// Воспользуйтесь инструментом .querySelector()
@@ -40,7 +40,7 @@ function OpenPopup(event) {
 
     // Прикрепляем обработчик к форме:
     // он будет следить за событием “submit” - «отправка»
-    formElement.addEventListener('submit', formSubmitHandler); 
+    formElement.addEventListener('submit', formSubmitHandler);
 }
 
 function ClosePopup() {
@@ -54,3 +54,15 @@ closePopupBtn.addEventListener('click', function() {ClosePopup();});
 closeOverlay.addEventListener('click', function() {ClosePopup();});
 
 popupContent.addEventListener('click', function(event) {event.stopImmediatePropagation();});
+
+let body = document.querySelector('.page');
+
+body.addEventListener("keyup", function(event) {
+    if (event.keyCode == 13) {
+         ClosePopup();
+        let inputName = document.querySelector('.popup__edit-title');
+        let inputJob = document.querySelector('.popup__edit-subtitle');
+        editTitle.textContent = inputName.textContent;
+        editSubtitle.textContent = inputJob.textContent;
+    }
+});
