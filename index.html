@@ -12,22 +12,20 @@
         <div class="popup">
             <div class="popup__overlay"></div>
             <div class="popup__content">
-                <img class="popup__close-btn cursor" src="./image/popup-close-btn.png" alt="Закрытие">
-                <span class="popup__title">Редактировать профиль</span>
+                <button class="popup__close-btn cursor"></button>
+                <h2 class="popup__title">Редактировать профиль</h2>
                 <form id="popup_form">
-                    <div class="popup__edit-title" contenteditable="true"></div>
-                    <div class="popup__line"></div>
-                    <div class="popup__edit-subtitle" contenteditable="true"></div>
-                    <div class="popup__line"></div>
-                    <input type="submit" value="Сохранить" class="popup__save-btn cursor">
+                    <input type="text" name="edit_title" class="popup__edit">
+                    <input type="text" name="edit_subtitle" class="popup__edit">
+                    <button type="submit" class="popup__save-btn cursor">Сохранить</button>
                 </form>
             </div>
         </div>
 
         <!--блок header-->
         <header class="header">
-            <img class="header__logo" src="./image/header-logo.png" alt="Место Россия">
-            <div class="header__line"></div>
+            <img class="header__logo" src="./image/header-logo.svg" alt="Место Россия">
+            <!--<div class="header__line"></div>-->
         </header>
 
         <main>
@@ -36,55 +34,55 @@
                 <img class="profile__avatar" src="./image/profile-avatar.jpg" alt="Аватар">
                 <div class="profile__info">
                     <div class="profile__title-edit-btn">
-                        <h1 class="profile__title">Жак-Ив Кусто</h1>
-                        <div class="profile__edit-btn cursor" id="open_popup_btn"></div>
+                        <h1 class="profile__title block">Жак-Ив Кусто</h1>
+                        <button class="profile__edit-btn cursor" id="open_popup_btn"></button>
                     </div>
-                    <h2 class="profile__subtitle">Исследователь океана</h2>
+                    <p class="profile__subtitle block">Исследователь океана</p>
                 </div>
-                <div class="profile__add-btn cursor"></div>
+                <button class="profile__add-btn cursor"></button>
             </section>
             <!--блок elements-->
             <section class="elements">
                 <div class="element">
                     <img class="element__foto" src="./image/element1-kirill-pershin-1088404-unsplash.jpg" alt="Карачаевск">
                     <div class="element__title-like">
-                        <p class="element__title block">Карачаевск</p>
-                        <div class="element__like cursor"></div>
+                        <h2 class="element__title block">Карачаевск</h2>
+                        <button class="element__like cursor"></button>
                     </div>
                 </div>
                 <div class="element">
                     <img class="element__foto" src="./image/element2-kirill-pershin-1404681-unsplash.jpg" alt="Гора Эльбрус">
                     <div class="element__title-like">
-                        <p class="element__title block">Гора Эльбрус</p>
-                        <img class="element__like cursor" src="./image/element-like.png" alt="Лайк">
+                        <h2 class="element__title block">Гора Эльбрус</h2>
+                        <button class="element__like cursor"></button>
                     </div>
                 </div>
                 <div class="element">
                     <img class="element__foto" src="./image/element3-kirill-pershin-1556355-unsplash.jpg" alt="Домбай">
                     <div class="element__title-like">
-                        <p class="element__title block">Домбай</p>
-                        <img class="element__like cursor" src="./image/element-like.png" alt="Лайк">
+                        <h2 class="element__title block">Домбай</h2>
+                        <button class="element__like cursor"></button>
                     </div>
                 </div>
                 <div class="element">
                     <img class="element__foto" src="./image/element1-kirill-pershin-1088404-unsplash.jpg" alt="Карачаевск">
                     <div class="element__title-like">
-                        <p class="element__title block">Карачаево-Черкессия</p>
-                        <img class="element__like cursor" src="./image/element-like.png" alt="Лайк">
+                        <h2 class="element__title block">Карачаево-Черкессия</h2>
+                        <button class="element__like cursor"></button>
                     </div>
                 </div>
                 <div class="element">
                     <img class="element__foto" src="./image/element2-kirill-pershin-1404681-unsplash.jpg" alt="Гора Эльбрус">
                     <div class="element__title-like">
-                        <p class="element__title block">Гора Эльбрус</p>
-                        <img class="element__like cursor" src="./image/element-like.png" alt="Лайк">
+                        <h2 class="element__title block">Гора Эльбрус</h2>
+                        <button class="element__like cursor"></button>
                     </div>
                 </div>
                 <div class="element">
                     <img class="element__foto" src="./image/element3-kirill-pershin-1556355-unsplash.jpg" alt="Домбай">
                     <div class="element__title-like">
-                        <p class="element__title block">Домбай</p>
-                        <img class="element__like cursor" src="./image/element-like.png" alt="Лайк">
+                        <h2 class="element__title block">Домбай</h2>
+                        <button class="element__like cursor"></button>
                     </div>
                 </div>
             </section>

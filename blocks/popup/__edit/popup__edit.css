@@ -1,19 +1,26 @@
-.popup__edit-subtitle {
+.popup__edit {
     font-family: 'Inter', Arial, sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
     line-height: 17px;
-    margin: 30px auto 0;
-    padding: 0;
+    margin: 54px 36px 0;
+    padding: 0 0 13px 0;
     justify-self: start;
     width: 358px;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.popup__edit:nth-of-type(2) {
+    margin-top: 30px;
 }
 
 @media screen and (max-width: 639px) {
-    .popup__edit-subtitle {
+    .popup__edit {
         font-size: 14px;
         line-height: 17px;
+        margin: 75px 22px 0;
         width: 238px;
     }
 }

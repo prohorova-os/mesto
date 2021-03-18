@@ -7,9 +7,5 @@
     color: #000;
     /*visibility: hidden;*/
     display: none;
-}
-
-.popup_opened {
-    /*visibility: visible;*/
-    display: flex;
+    z-index: 2;
 }

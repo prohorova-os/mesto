@@ -3,66 +3,38 @@ let openPopupBtn = document.getElementById('open_popup_btn');
 let closePopupBtn = document.querySelector('.popup__close-btn');
 let closeOverlay = document.querySelector('.popup__overlay');
 let popupContent = document.querySelector('.popup__content');
-let popupTitle = document.querySelector('.popup__edit-title');
-let popupSubtitle = document.querySelector('.popup__edit-subtitle');
 let editTitle = document.querySelector('.profile__title');
 let editSubtitle = document.querySelector('.profile__subtitle');
+let formElement = document.forms.popup_form;
+let editT = formElement.elements.edit_title;
+let editS = formElement.elements.edit_subtitle;
 
+editT.value = editTitle.textContent;
 
-// Обработчик «отправки» формы, хотя пока
-// она никуда отправляться не будет
+console.log(editT.textContent);
+
 function formSubmitHandler (evt) {
-    evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
-                                                    // Так мы можем определить свою логику отправки.
-                                                    // О том, как это делать, расскажем позже.
-    // Получите значение полей jobInput и nameInput из свойства value
-    let inputName = document.querySelector('.popup__edit-title');
-    let inputJob = document.querySelector('.popup__edit-subtitle');
-    
-    // Выберите элементы, куда должны быть вставлены значения полей
-    // Вставьте новые значения с помощью textContent    
-    editTitle.textContent = inputName.textContent;
-    editSubtitle.textContent = inputJob.textContent;
-    ClosePopup();                
+    evt.preventDefault();
+    editTitle.textContent = editT.value;
+    editSubtitle.textContent = editS.value;
+    closePopup();                
 }
     
-function OpenPopup(event) {
+function openPopup(event) {
     popup.classList.add('popup_opened');
-    popupTitle.textContent = editTitle.textContent;
-    popupSubtitle.textContent = editSubtitle.textContent;
-
-    // Находим форму в DOM
-    let formElement = document.getElementById('popup_form');// Воспользуйтесь методом querySelector()
-
-    // Находим поля формы в DOM
-    let nameInput = formElement.querySelector('.popup__edit-title');// Воспользуйтесь инструментом .querySelector()
-    let jobInput = formElement.querySelector('.popup__edit-subtitle');// Воспользуйтесь инструментом .querySelector()
-
-    // Прикрепляем обработчик к форме:
-    // он будет следить за событием “submit” - «отправка»
-    formElement.addEventListener('submit', formSubmitHandler);
+    editT.value = editTitle.textContent;
+    editS.value = editSubtitle.textContent;
 }
 
-function ClosePopup() {
+function closePopup() {
     popup.classList.remove('popup_opened');
 }
 
-openPopupBtn.addEventListener('click', function() {OpenPopup();});
+openPopupBtn.addEventListener('click', function() {openPopup();});
 
-closePopupBtn.addEventListener('click', function() {ClosePopup();});
+closePopupBtn.addEventListener('click', function() {closePopup();});
 
-closeOverlay.addEventListener('click', function() {ClosePopup();});
+closeOverlay.addEventListener('click', function() {closePopup();});
 
-popupContent.addEventListener('click', function(event) {event.stopImmediatePropagation();});
-
-let body = document.querySelector('.page');
-
-body.addEventListener("keyup", function(event) {
-    if (event.keyCode == 13) {
-         ClosePopup();
-        let inputName = document.querySelector('.popup__edit-title');
-        let inputJob = document.querySelector('.popup__edit-subtitle');
-        editTitle.textContent = inputName.textContent;
-        editSubtitle.textContent = inputJob.textContent;
-    }
-});
+formElement.addEventListener('submit', formSubmitHandler);
+ 

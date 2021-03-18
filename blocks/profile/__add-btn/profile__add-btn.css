@@ -2,9 +2,10 @@
     width: 150px;
     height: 50px;
     border: 2px solid #FFFFFF;
+    background: none;
     box-sizing: border-box;
     border-radius: 2px;
-    background-image: url("../../../image/profile-add-btn.png");
+    background-image: url("../../../image/profile-add-btn.svg");
     background-position: center;
     background-size: 22px 22px;
     background-repeat: no-repeat;
@@ -12,7 +13,7 @@
 }
 
 .profile__add-btn:hover {
-    opacity: 0.8;
+    opacity: 0.6;
 }
 
 @media screen and (max-width: 959px) {
