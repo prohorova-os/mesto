@@ -7,7 +7,7 @@
     object-fit: cover;
     background: none;
     border: none;
-    background-image: url("../../../image/element-like.png");
+    background-image: url("../../../image/element-like.svg");
 }
 
 .element__like:hover {
@@ -17,7 +17,7 @@
 .element__like:active {
     background: none;
     border: none;
-    background-image: url("../../../image/element-like-black.png");
+    background-image: url("../../../image/element-like.svg");
     opacity: 1;
 }
 

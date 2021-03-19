@@ -6,8 +6,8 @@ let popupContent = document.querySelector('.popup__content');
 let editTitle = document.querySelector('.profile__title');
 let editSubtitle = document.querySelector('.profile__subtitle');
 let formElement = document.querySelector('.form');
-let editT = formElement.elements.edittitle;
-let editS = formElement.elements.editsubtitle;
+let editT = document.querySelector('[name="edit-title"]');
+let editS = document.querySelector('[name="edit-subtitle"]');
 
 function formSubmitHandler (evt) {
     evt.preventDefault();
