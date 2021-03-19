@@ -5,7 +5,9 @@
     top: 0;
     bottom: 0;
     color: #000;
-    /*visibility: hidden;*/
     display: none;
     z-index: 2;
+    align-items: center;
+    justify-content: center;
+
 }

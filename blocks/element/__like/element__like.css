@@ -4,6 +4,7 @@
     width: 22px;
     height: 19px;
     box-sizing: border-box;
+    object-fit: cover;
     background: none;
     border: none;
     object-fit: cover;
