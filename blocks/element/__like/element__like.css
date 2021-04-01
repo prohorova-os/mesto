@@ -8,16 +8,9 @@
     background: none;
     border: none;
     background-image: url("../../../image/element-like.svg");
+    outline: none;
 }
 
 .element__like:hover {
     opacity: 0.5;
 }
-
-.element__like:active {
-    background: none;
-    border: none;
-    background-image: url("../../../image/element-like.svg");
-    opacity: 1;
-}
-

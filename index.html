@@ -8,8 +8,8 @@
 </head>
 <body class="page">
     <div class="container">
-        <!--popup-->
-        <div class="popup">
+        <!--popup редактировать-->
+        <div class="popup popup_closed">
             <div class="popup__overlay"></div>
             <div class="popup__content">
                 <button type="button" class="popup__close-btn cursor"></button>
@@ -22,10 +22,33 @@
             </div>
         </div>
 
+        <!--popup новое место-->
+        <div class="popup popup_closed" id="add-popup">
+            <div class="popup__overlay" name="add-popup-overlay"></div>
+            <div class="popup__content">
+                <button type="button" class="popup__close-btn cursor" id='close_popup-add_btn'></button>
+                <h2 class="popup__title">Новое место</h2>
+                <form name="add-popup-form" class="form">
+                    <input type="text" name="edit-title-add" class="popup__edit" placeholder="Название">
+                    <input type="text" name="edit-subtitle-add" class="popup__edit" placeholder="Ссылка на картинку">
+                    <button type="submit" class="popup__save-btn cursor">Сохранить</button>
+                </form>
+            </div>
+        </div>
+
+        <!--popup просмотр картинки-->
+        <div class="popup popup_closed" id="img-popup">
+            <div class="popup__overlay popup__overlay_img" name="img-popup-overlay"></div>
+            <div class="popup__content-img">
+                <button type="button" class="popup__close-btn cursor" id='close_popup-img_btn'></button>
+                <img class="popup__img" src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg" alt="">
+                <p class="popup__title-img"></p>
+            </div>
+        </div>
+
         <!--блок header-->
         <header class="header">
             <img class="header__logo" src="./image/header-logo.svg" alt="Место Россия">
-            <!--<div class="header__line"></div>-->
         </header>
 
         <main>
@@ -39,52 +62,10 @@
                     </div>
                     <p class="profile__subtitle block">Исследователь океана</p>
                 </div>
-                <button type="button" class="profile__add-btn cursor"></button>
+                <button type="button" class="profile__add-btn cursor" id="open_popup-add_btn"></button>
             </section>
             <!--блок elements-->
-            <section class="elements">
-                <div class="element">
-                    <img class="element__foto" src="./image/element1-kirill-pershin-1088404-unsplash.jpg" alt="Карачаевск">
-                    <div class="element__title-like">
-                        <h2 class="element__title block">Карачаевск</h2>
-                        <button type="button" class="element__like cursor"></button>
-                    </div>
-                </div>
-                <div class="element">
-                    <img class="element__foto" src="./image/element2-kirill-pershin-1404681-unsplash.jpg" alt="Гора Эльбрус">
-                    <div class="element__title-like">
-                        <h2 class="element__title block">Гора Эльбрус</h2>
-                        <button type="button" class="element__like cursor"></button>
-                    </div>
-                </div>
-                <div class="element">
-                    <img class="element__foto" src="./image/element3-kirill-pershin-1556355-unsplash.jpg" alt="Домбай">
-                    <div class="element__title-like">
-                        <h2 class="element__title block">Домбай</h2>
-                        <button type="button" class="element__like cursor"></button>
-                    </div>
-                </div>
-                <div class="element">
-                    <img class="element__foto" src="./image/element1-kirill-pershin-1088404-unsplash.jpg" alt="Карачаевск">
-                    <div class="element__title-like">
-                        <h2 class="element__title block">Карачаево-Черкессия</h2>
-                        <button type="button" class="element__like cursor"></button>
-                    </div>
-                </div>
-                <div class="element">
-                    <img class="element__foto" src="./image/element2-kirill-pershin-1404681-unsplash.jpg" alt="Гора Эльбрус">
-                    <div class="element__title-like">
-                        <h2 class="element__title block">Гора Эльбрус</h2>
-                        <button type="button" class="element__like cursor"></button>
-                    </div>
-                </div>
-                <div class="element">
-                    <img class="element__foto" src="./image/element3-kirill-pershin-1556355-unsplash.jpg" alt="Домбай">
-                    <div class="element__title-like">
-                        <h2 class="element__title block">Домбай</h2>
-                        <button type="button" class="element__like cursor"></button>
-                    </div>
-                </div>
+            <section class="elements">                
             </section>
         </main>
         <!--блок footer-->
@@ -92,6 +73,17 @@
             <span class="footer__copyright">&copy;2020 Mesto Russia</span>
         </footer>
     </div>
+    <!--template element-->
+    <template class="list-item-template">
+        <div class="element">
+            <img class="element__foto cursor" src="" alt="">
+            <button type="button" class="element__delete cursor"></button> 
+            <div class="element__title-like">
+                <h2 class="element__title block"></h2>
+                <button type="button" class="element__like cursor"></button>
+            </div>
+        </div>
+    </template>
     <script src="./scripts/index.js"></script>
 </body>
 </html>
