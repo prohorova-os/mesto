@@ -97,8 +97,14 @@ function actionsListItem(listItemTemplate, link, name) {
     deleteListItem(listItem);
     /*popup просмотр картинки*/
     viewingListItem(listItem, link, name);
-    list.prepend(listItem);
     return listItem;
+}
+
+/*добавление элемента на сайт*/
+function addListItem(listItemTemplate, link, name) {
+    /*создание и удаление элемента, popap просмотр картинки*/
+    const listItem = actionsListItem(listItemTemplate, link, name);
+    list.prepend(listItem);
 }
 
 /*popap редактировать: функции*/
@@ -114,8 +120,8 @@ function formAddSubmitHandler (evt) {
     evt.preventDefault();
     const link = editSAdd.value;
     const name = editTAdd.value;
-    /*создание и удаление элемента, popap просмотр картинки*/
-    actionsListItem(listItemTemplate, link, name);
+    /*добавление элемента на сайт*/
+    addListItem(listItemTemplate, link, name);
     closePopup(popupAdd);          
 }
 
@@ -159,6 +165,6 @@ closePopupImgOverlay.addEventListener('click', function() {closePopup(popupImg);
 intitalListData.forEach(item => {
     const link = item.link;
     const name = item.name;
-    /*создание и удаление элемента, popap просмотр картинки*/
-    actionsListItem(listItemTemplate, link, name);
+    /*добавление элемента на сайт*/
+    addListItem(listItemTemplate, link, name);
 });
