@@ -14,10 +14,12 @@
             <div class="popup__content">
                 <button type="button" class="popup__close-btn cursor"></button>
                 <h2 class="popup__title">Редактировать профиль</h2>
-                <form name="popup-form" class="form">
-                    <input type="text" name="edit-title" class="popup__edit">
-                    <input type="text" name="edit-subtitle" class="popup__edit">
-                    <button type="submit" class="popup__save-btn cursor">Сохранить</button>
+                <form name="popup-form" class="form" novalidate>
+                    <input type="text" name="edit-title" class="popup__edit" required minlength="2" maxlength="40">
+                    <span class="popup__input-error">error</span>
+                    <input type="text" name="edit-subtitle" class="popup__edit" required minlength="2" maxlength="200">
+                    <span class="popup__input-error">error</span>
+                    <button type="submit" class="popup__save-btn popup__save-btn_disabled">Сохранить</button>
                 </form>
             </div>
         </div>
@@ -28,10 +30,14 @@
             <div class="popup__content">
                 <button type="button" class="popup__close-btn cursor" id='close_popup-add_btn'></button>
                 <h2 class="popup__title">Новое место</h2>
-                <form name="add-popup-form" class="form">
-                    <input type="text" name="edit-title-add" class="popup__edit" placeholder="Название">
-                    <input type="text" name="edit-subtitle-add" class="popup__edit" placeholder="Ссылка на картинку">
-                    <button type="submit" class="popup__save-btn cursor">Сохранить</button>
+                <form name="add-popup-form" class="form" novalidate>
+                    <input type="text" name="edit-title-add" class="popup__edit" placeholder="Название"
+                    required minlength="2" maxlength="30">
+                    <span class="popup__input-error">error</span>
+                    <input type="url" name="edit-subtitle-add" class="popup__edit" placeholder="Ссылка на картинку"
+                    required>
+                    <span class="popup__input-error">error</span>
+                    <button type="submit" class="popup__save-btn popup__save-btn_disabled">Сохранить</button>
                 </form>
             </div>
         </div>
@@ -85,5 +91,6 @@
         </div>
     </template>
     <script src="./scripts/index.js"></script>
+    <script src="./scripts/validate.js"></script>
 </body>
 </html>

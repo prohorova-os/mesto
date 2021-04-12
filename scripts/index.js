@@ -131,8 +131,8 @@ function viewingListItem(item, link, name) {
     /*обработка событий*/
     listItemImage.addEventListener('click', () => {
         openPopup(popupImg);
-        popupImg.querySelector('.popup__img').src = link;
-        popupImg.querySelector('.popup__img').alt = name;
+        const image = popupImg.querySelector('.popup__img').src = link;
+        image.alt = name;
         popupImg.querySelector('.popup__title-img').textContent = name;
     });
 }
