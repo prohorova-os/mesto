@@ -38,7 +38,6 @@ const checkInputValidity = (formElement, inputElement, errorClass, inputErrorCla
 /*переключение активности кнопки */
 const toggleButtleState = (buttonElement, inputList, inactiveButtonClass) => {
     const hasNotValidInput = inputList.some((inputElement) => !inputElement.validity.valid);
-    console.log(hasNotValidInput)
     if (hasNotValidInput) {
         buttonElement.setAttribute("disabled", true);
         buttonElement.classList.add(inactiveButtonClass);

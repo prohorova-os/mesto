@@ -57,14 +57,22 @@ const list = document.querySelector('.elements');
 const listItemTemplate = document.querySelector('.list-item-template').content.querySelector('.element');
 
 /*popap для всех: функции*/
-function openPopup(popup) {;
-    popup.classList.remove('popup_closed');
-    popup.classList.add('popup_opened');
-}
-
 function closePopup(popup) {
     popup.classList.remove('popup_opened');
     popup.classList.add('popup_closed');
+}
+
+function openPopup(popup) {;
+    popup.classList.remove('popup_closed');
+    popup.classList.add('popup_opened');
+    /*закрытие при нажатии Esc */
+    function close(evt) {
+        if (evt.key === 'Escape') {
+          closePopup(popup);
+          window.removeEventListener('keydown', close);
+        }
+      }
+    window.addEventListener('keydown', close);
 }
 
 /*вставка картинок на сайт: функции: создание элемента*/
