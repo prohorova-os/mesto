@@ -53,6 +53,7 @@
 @import url(../blocks/popup/__input-error/_active/popup__input-error_active.css);
 @import url(../blocks/popup/__save-btn/_disabled/popup__save-btn_disabled.css);
 @import url(../blocks/popup/__edit/_error.css/popup__edit_error.css);
+@import url(../blocks/form/__section/form__section.css);
 
 /*block*/
 @import url(../blocks/block/block.css);
