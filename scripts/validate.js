@@ -5,39 +5,44 @@ const searchErrorElement = (inputElement, inputErrorClass,inputSection) => {
 }
 
 /*показать ошибку*/
-const showInputError = (formElement, inputElement, errorMessage, errorClass, inputErrorClass, inputSection) => {
+const showInputError = (formElement, inputElement, errorMessage, errorClass, inputErrorClass, inputSection, 
+    errorClassLine) => {
     /*вывод текста ошибки*/
     const errorElement = searchErrorElement(inputElement, inputErrorClass, inputSection);
     errorElement.textContent = errorMessage;
     errorElement.classList.add(errorClass);
     /*изменение цвета черты на красный*/
-    inputElement.classList.add('popup__edit_error');
+    inputElement.classList.add(errorClassLine);
 }
 
 /*скрыть поле с ошибкой*/
-const hideInputError = (formElement, inputElement, errorClass, inputErrorClass, inputSection) => {
+const hideInputError = (formElement, inputElement, errorClass, inputErrorClass, inputSection, 
+    errorClassLine) => {
     const errorElement = searchErrorElement(inputElement, inputErrorClass, inputSection);
     errorElement.textContent = " ";
     errorElement.classList.remove(errorClass);
     /*изменение цвета черты на серый*/
-    inputElement.classList.remove('popup__edit_error');
+    inputElement.classList.remove(errorClassLine);
 }
 
 /*валидация формы*/
-const checkInputValidity = (formElement, inputElement, errorClass, inputErrorClass, inputSection) => {
+const checkInputValidity = (formElement, inputElement, errorClass, inputErrorClass, inputSection, 
+    errorClassLine) => {
     const isInputNoValid = inputElement.validity.valid;
     if (isInputNoValid) {
-        hideInputError(formElement, inputElement, errorClass, inputErrorClass, inputSection);
+        hideInputError(formElement, inputElement, errorClass, inputErrorClass, inputSection, errorClassLine);
     }
     else {
         const errorMessage = inputElement.validationMessage;
-        showInputError(formElement, inputElement, errorMessage, errorClass, inputErrorClass, inputSection);
+        showInputError(formElement, inputElement, errorMessage, errorClass, inputErrorClass, inputSection, 
+            errorClassLine);
     }
 }
 
 /*переключение активности кнопки */
 const toggleButtleState = (buttonElement, inputList, inactiveButtonClass) => {
     const hasNotValidInput = inputList.some((inputElement) => !inputElement.validity.valid);
+
     if (hasNotValidInput) {
         buttonElement.setAttribute("disabled", true);
         buttonElement.classList.add(inactiveButtonClass);
@@ -50,15 +55,17 @@ const toggleButtleState = (buttonElement, inputList, inactiveButtonClass) => {
 
 /*обработчик событий поле формы*/
 const setEventListeners = (formElement, inputSelector, submitButtonSelector, inactiveButtonClass, 
-    errorClass, inputErrorClass, inputSection) => {
+    errorClass, inputErrorClass, inputSection, errorClassLine) => {
     formElement.addEventListener('submit', event => {
         event.preventDefault();
     });
     const inputList = Array.from(formElement.querySelectorAll(inputSelector));
     const buttonElement = formElement.querySelector(submitButtonSelector);
+
     inputList.forEach(inputElement => {
         inputElement.addEventListener('input', event => {
-            checkInputValidity(formElement, inputElement, errorClass, inputErrorClass, inputSection);
+            checkInputValidity(formElement, inputElement, errorClass, inputErrorClass, inputSection, 
+                errorClassLine);
             toggleButtleState(buttonElement, inputList, inactiveButtonClass);
         });
     });
@@ -67,13 +74,12 @@ const setEventListeners = (formElement, inputSelector, submitButtonSelector, ina
 
 /*валидация*/
 const enableValidation = ({formSelector, inputSelector, submitButtonSelector, inactiveButtonClass,
-    errorClass, inputErrorClass, inputSection}) => {
+    errorClass, inputErrorClass, inputSection, errorClassLine}) => {
     const formList = Array.from(document.querySelectorAll(formSelector));
     formList.forEach((formElement) => {
         setEventListeners(formElement, inputSelector, submitButtonSelector, inactiveButtonClass, 
-            errorClass, inputErrorClass, inputSection);
+            errorClass, inputErrorClass, inputSection, errorClassLine);
     });
-    
 }
 
 // включение валидации вызовом enableValidation
@@ -86,5 +92,6 @@ enableValidation({
     inactiveButtonClass: 'popup__save-btn_disabled',
     inputErrorClass: '.popup__input-error',
     inputSection: '.form__section',
-    errorClass: 'popup__input-error_active'
+    errorClass: 'popup__input-error_active',
+    errorClassLine: 'popup_error'
   }); 

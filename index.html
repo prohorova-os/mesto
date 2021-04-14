@@ -8,59 +8,6 @@
 </head>
 <body class="page">
     <div class="container">
-
-        <!--popup редактировать-->
-        <div class="popup popup_closed">
-            <div class="popup__overlay"></div>
-            <div class="popup__content">
-                <button type="button" class="popup__close-btn cursor"></button>
-                <h2 class="popup__title">Редактировать профиль</h2>
-                <form name="popup-form" class="form" novalidate accept-charset>
-                    <section class="form__section">
-                        <input type="text" name="edit-title" class="popup__edit" required minlength="2" maxlength="40">
-                        <span class="popup__input-error" id="edit-title-error">error</span>
-                    </section>
-                    <section class="form__section">
-                        <input type="text" name="edit-subtitle" class="popup__edit" required minlength="2" maxlength="200">
-                        <span class="popup__input-error" id="edit-subtitle-error">error</span>
-                    </section>
-                    <button type="submit" class="popup__save-btn cursor">Сохранить</button>
-                </form>
-            </div>
-        </div>
-
-        <!--popup новое место-->
-        <div class="popup popup_closed" id="add-popup">
-            <div class="popup__overlay" name="add-popup-overlay"></div>
-            <div class="popup__content">
-                <button type="button" class="popup__close-btn cursor" id='close_popup-add_btn'></button>
-                <h2 class="popup__title">Новое место</h2>
-                <form name="add-popup-form" class="form" novalidate accept-charset>
-                    <section class="form__section">
-                        <input type="text" name="edit-title-add" class="popup__edit" placeholder="Название"
-                        required minlength="2" maxlength="30">
-                        <span class="popup__input-error" id="edit-title-add-error">error</span>
-                    </section>
-                    <section class="form__section">
-                        <input type="url" name="edit-subtitle-add" class="popup__edit" placeholder="Ссылка на картинку"
-                        required>
-                        <span class="popup__input-error" id="edit-subtitle-add-error">error</span>
-                    </section>
-                    <button type="submit" class="popup__save-btn cursor">Сохранить</button>
-                </form>
-            </div>
-        </div>
-
-        <!--popup просмотр картинки-->
-        <div class="popup popup_closed" id="img-popup">
-            <div class="popup__overlay popup__overlay_img" name="img-popup-overlay"></div>
-            <div class="popup__content-img">
-                <button type="button" class="popup__close-btn cursor" id='close_popup-img_btn'></button>
-                <img class="popup__img" src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg" alt="Архыз">
-                <p class="popup__title-img"></p>
-            </div>
-        </div>
-
         <!--блок header-->
         <header class="header">
             <img class="header__logo" src="./image/header-logo.svg" alt="Место Россия">
@@ -99,6 +46,60 @@
             </div>
         </div>
     </template>
+
+
+    <!--popup редактировать-->
+    <div class="popup popup_closed" id="edit-popup">
+        <div class="popup__overlay" id="edit-popup-overlay"></div>
+        <div class="popup__content" id="popup-content">
+            <button type="button" class="popup__close-btn cursor" id="close_popup-edit_btn"></button>
+            <h2 class="popup__title">Редактировать профиль</h2>
+            <form name="popup-form-edit" class="form" novalidate>
+                <div class="form__section">
+                    <input type="text" name="edit-title" class="popup__edit" required minlength="2" maxlength="40">
+                    <span class="popup__input-error" id="edit-title-error">error</span>
+                </div>
+                <div class="form__section">
+                    <input type="text" name="edit-subtitle" class="popup__edit" required minlength="2" maxlength="200">
+                    <span class="popup__input-error" id="edit-subtitle-error">error</span>
+                </div>
+                <button type="submit" class="popup__save-btn cursor">Сохранить</button>
+            </form>
+        </div>
+    </div>
+
+    <!--popup новое место-->
+    <div class="popup popup_closed" id="add-popup">
+        <div class="popup__overlay" id="add-popup-overlay"></div>
+        <div class="popup__content">
+            <button type="button" class="popup__close-btn cursor" id='close_popup-add_btn'></button>
+            <h2 class="popup__title">Новое место</h2>
+            <form name="add-popup-form" class="form" novalidate>
+                <div class="form__section">
+                    <input type="text" name="edit-title-add" class="popup__edit" placeholder="Название"
+                    required minlength="2" maxlength="30">
+                    <span class="popup__input-error" id="edit-title-add-error">error</span>
+                </div>
+                <div class="form__section">
+                    <input type="url" name="edit-subtitle-add" class="popup__edit" placeholder="Ссылка на картинку"
+                    required>
+                    <span class="popup__input-error" id="edit-subtitle-add-error">error</span>
+                </div>
+                <button type="submit" class="popup__save-btn cursor">Сохранить</button>
+            </form>
+        </div>
+    </div>
+
+    <!--popup просмотр картинки-->
+    <div class="popup popup_closed" id="img-popup">
+        <div class="popup__overlay popup__overlay_img" id="img-popup-overlay"></div>
+        <div class="popup__content-img">
+            <button type="button" class="popup__close-btn cursor" id='close_popup-img_btn'></button>
+            <img class="popup__img" src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg" alt="Архыз">
+            <p class="popup__title-img"></p>
+        </div>
+    </div>
+
     <script src="./scripts/index.js"></script>
     <script src="./scripts/validate.js"></script>
 </body>

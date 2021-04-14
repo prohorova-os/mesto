@@ -26,22 +26,22 @@ const intitalListData = [
   ]; 
 
 /*popap редактировать: переменные*/
-const popup = document.querySelector('.popup');
-const openPopupBtn = document.getElementById('open_popup_btn');
-const closePopupBtn = document.querySelector('.popup__close-btn');
-const closeOverlay = document.querySelector('.popup__overlay');
-const popupContent = document.querySelector('.popup__content');
+const popup = document.querySelector('[id="edit-popup"]');
+const openPopupBtn = document.querySelector('[id="open_popup_btn"]');
+const closePopupBtn = document.querySelector('[id="close_popup-edit_btn"]');
+const closeOverlay = document.querySelector('[id="edit-popup-overlay"]');
+const popupContent = document.querySelector('[id="popup-content"]');
 const editTitle = document.querySelector('.profile__title');
 const editSubtitle = document.querySelector('.profile__subtitle');
-const formElement = document.querySelector('[name="popup-form"]');
+const formElement = document.querySelector('[name="popup-form-edit"]');
 const editT = document.querySelector('[name="edit-title"]');
 const editS = document.querySelector('[name="edit-subtitle"]');
 
 /*popap новое место: переменные*/
-const openPopupAddBtn = document.getElementById('open_popup-add_btn');
-const closePopupAddBtn = document.getElementById('close_popup-add_btn');
-const closePopupAddOverlay = document.querySelector('[name="add-popup-overlay"]');
-const popupAdd = document.getElementById('add-popup');
+const openPopupAddBtn = document.querySelector('[id="open_popup-add_btn"]');
+const closePopupAddBtn = document.querySelector('[id="close_popup-add_btn"]');
+const closePopupAddOverlay = document.querySelector('[id="add-popup-overlay"]');
+const popupAdd = document.querySelector('[id="add-popup"]');
 const profileAddBtn = document.querySelector('.profile__add-btn');
 const formElementAdd = document.querySelector('[name="add-popup-form"]');
 const editTAdd = document.querySelector('[name="edit-title-add"]');
@@ -50,7 +50,7 @@ const editSAdd = document.querySelector('[name="edit-subtitle-add"]');
 /*popup просмотр картинки: переменные*/
 const popupImg = document.getElementById('img-popup');
 const closePopupImgBtn = document.getElementById('close_popup-img_btn');
-const closePopupImgOverlay = document.querySelector('[name="img-popup-overlay"]');
+const closePopupImgOverlay = document.querySelector('[id="img-popup-overlay"]');
 
 /*вставка картинок на сайт: переменные*/
 const list = document.querySelector('.elements');
@@ -66,13 +66,14 @@ function openPopup(popup) {;
     popup.classList.remove('popup_closed');
     popup.classList.add('popup_opened');
     /*закрытие при нажатии Esc */
-    function close(evt) {
+    window.addEventListener('keydown', function(evt) {
         if (evt.key === 'Escape') {
-          closePopup(popup);
-          window.removeEventListener('keydown', close);
-        }
-      }
-    window.addEventListener('keydown', close);
+            closePopup(popup);
+          }
+    });
+    /*сделать кнопку неактивной*/
+    const btn = popup.querySelector('.popup__save-btn');
+    if (btn !== null) {btn.classList.add('popup__save-btn_disabled');}
 }
 
 /*вставка картинок на сайт: функции: создание элемента*/
