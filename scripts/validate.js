@@ -93,5 +93,5 @@ enableValidation({
     inputErrorClass: '.popup__input-error',
     inputSection: '.form__section',
     errorClass: 'popup__input-error_active',
-    errorClassLine: 'popup_error'
+    errorClassLine: 'popup__edit_error'
   }); 

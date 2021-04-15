@@ -62,18 +62,27 @@ function closePopup(popup) {
     popup.classList.add('popup_closed');
 }
 
+function closePopupEsc(evt, popup) {
+    if (evt.key === 'Escape') {
+        closePopup(popup);
+      }
+}
+
+function buttonDisabled(popup) {
+    const btn = popup.querySelector('.popup__save-btn');
+    if (btn !== null) {
+        btn.classList.add('popup__save-btn_disabled');
+        btn.setAttribute("disabled", true);
+    }
+}
+
 function openPopup(popup) {;
     popup.classList.remove('popup_closed');
     popup.classList.add('popup_opened');
     /*закрытие при нажатии Esc */
-    window.addEventListener('keydown', function(evt) {
-        if (evt.key === 'Escape') {
-            closePopup(popup);
-          }
-    });
+    window.addEventListener('keydown', (event) => closePopupEsc(event, popup));
     /*сделать кнопку неактивной*/
-    const btn = popup.querySelector('.popup__save-btn');
-    if (btn !== null) {btn.classList.add('popup__save-btn_disabled');}
+    buttonDisabled(popup);
 }
 
 /*вставка картинок на сайт: функции: создание элемента*/
@@ -140,7 +149,8 @@ function viewingListItem(item, link, name) {
     /*обработка событий*/
     listItemImage.addEventListener('click', () => {
         openPopup(popupImg);
-        const image = popupImg.querySelector('.popup__img').src = link;
+        const image = popupImg.querySelector('.popup__img');
+        image.src = link;
         image.alt = name;
         popupImg.querySelector('.popup__title-img').textContent = name;
     });
