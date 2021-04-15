@@ -60,29 +60,28 @@ const listItemTemplate = document.querySelector('.list-item-template').content.q
 function closePopup(popup) {
     popup.classList.remove('popup_opened');
     popup.classList.add('popup_closed');
+    document.removeEventListener('keydown', closePopupEsc);
 }
 
-function closePopupEsc(evt, popup) {
+function closePopupEsc(evt) {
+    const popup = document.querySelector('.popup_opened')
     if (evt.key === 'Escape') {
         closePopup(popup);
       }
 }
 
 function buttonDisabled(popup) {
+    /*поиск кнопки открытого попапа*/
     const btn = popup.querySelector('.popup__save-btn');
-    if (btn !== null) {
-        btn.classList.add('popup__save-btn_disabled');
-        btn.setAttribute("disabled", true);
-    }
+    btn.classList.add('popup__save-btn_disabled');
+    btn.setAttribute("disabled", true);
 }
 
 function openPopup(popup) {;
     popup.classList.remove('popup_closed');
     popup.classList.add('popup_opened');
     /*закрытие при нажатии Esc */
-    window.addEventListener('keydown', (event) => closePopupEsc(event, popup));
-    /*сделать кнопку неактивной*/
-    buttonDisabled(popup);
+    document.addEventListener('keydown', closePopupEsc);
 }
 
 /*вставка картинок на сайт: функции: создание элемента*/
@@ -159,6 +158,7 @@ function viewingListItem(item, link, name) {
 /*popap редактировать: обработка событий*/
 openPopupBtn.addEventListener('click', function() {
         openPopup(popup);
+        buttonDisabled(popup);
         editT.value = editTitle.textContent;
         editS.value = editSubtitle.textContent;
     });
@@ -169,6 +169,7 @@ formElement.addEventListener('submit', formSubmitHandler);
 /*popap новое место: обработка событий*/
 openPopupAddBtn.addEventListener('click', function() {
         openPopup(popupAdd);
+        buttonDisabled(popupAdd);
         editTAdd.value = '';
         editSAdd.value='';
     });
